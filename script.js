@@ -83,7 +83,8 @@ function avaliacao() {
   resume.appendChild(rate);
 }
 function observacoes() {
-  const observation = document.createElement('p');
+  const observation = document.createElement('div');
+  observation.style.border = '1px solid yellow';
   observation.innerText = `Observações: ${document.getElementById('textarea').value}`;
   resume.appendChild(observation);
 }
