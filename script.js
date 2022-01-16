@@ -3,11 +3,13 @@ const senha = document.getElementById('password');
 const btnLogin = document.getElementById('btnLogin');
 const form = document.getElementById('evaluation-form');
 const resume = document.getElementById('resume');
+const main = document.getElementById('main');
 
 btnLogin.addEventListener('click', (event) => {
   event.preventDefault();
   alert('Bem Vindo Tryber!');
   form.style.display = 'flex';
+  main.style.height = '100%';
   email.innerText = '';
   senha.innerText = '';
 });
