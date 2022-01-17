@@ -39,7 +39,7 @@ function hideForm() {
   form.innerHTML = '';
   form.appendChild(resume);
   resume.style.display = 'flex';
-  main.style.height = '685px';
+  main.style.height = '1000px';
 }
 function familia() {
   const family = document.createElement('p');
