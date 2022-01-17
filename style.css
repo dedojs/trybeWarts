@@ -382,6 +382,11 @@ footer {
 
   #trybewarts-forms-logo {
     width: 70%;
+    
+  }
+
+  #main {
+    justify-content: flex-start;
   }
 
   #resume {
