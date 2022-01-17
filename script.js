@@ -1,17 +1,17 @@
-const email = document.getElementById('email');
+const nome = document.getElementById('email');
 const senha = document.getElementById('password');
 const btnLogin = document.getElementById('btnLogin');
-const form = document.getElementById('evaluation-form');
+const form = document.getElementById('mc-embedded-subscribe-form');
 const resume = document.getElementById('resume');
 const main = document.getElementById('main');
 
 btnLogin.addEventListener('click', (event) => {
   event.preventDefault();
-  alert('Bem Vindo Tryber!');
+  alert(`Olá ${nome.value}! Bem vindo a TrybeWarts!`);
   form.style.display = 'flex';
   main.style.height = '100%';
-  email.innerText = '';
-  senha.innerText = '';
+  nome.value = '';
+  senha.value = '';
 });
 
 /* andre requisito 18 */
@@ -38,7 +38,7 @@ document.getElementById('textarea').addEventListener('input', counterF);
 function hideForm() {
   form.innerHTML = '';
   form.appendChild(resume);
-  resume.style.display = 'block';
+  resume.style.display = 'flex';
   main.style.height = '685px';
 }
 function familia() {
@@ -51,6 +51,7 @@ function familia() {
   }
   resume.appendChild(family);
 }
+
 const subjects = [];
 const contentValue = document.getElementsByClassName('content');
 function checkSubjects() {
@@ -91,16 +92,29 @@ function observacoes() {
   observation.innerText = `Observações: ${document.getElementById('textarea').value}`;
   resume.appendChild(observation);
 }
+const btnChimp = document.getElementById('btn-chimp')
+function createButton () {
+  const btn3 = document.createElement('button');
+  btn3.type = 'submit';
+  btn3.id = 'mc-embedded-subscribe';
+  btn3.innerText = 'Enviar';
+  btn3.style.display = 'block'
+  btn3.name = 'subscribe'
+  btn3.className = 'button'
+  resume.appendChild(btn3)
+}
+
+
 function imprimirDados(event) {
   event.preventDefault();
   resume.innerHTML = '';
   const name = document.createElement('p');
-  name.innerText = document.querySelector('[name=nome]').value;
+  name.innerText = document.querySelector('[name=FIRSTNAME]').value;
   const sobrenome = document.createElement('p');
   sobrenome.innerText = `Nome: ${name.innerText} ${document.querySelector('[name=sobre]').value}`;
   resume.appendChild(sobrenome);
   const emailInput = document.createElement('p');
-  emailInput.innerText = `Email: ${document.querySelector('[name=emailinput]').value}`;
+  emailInput.innerText = `Email: ${document.querySelector('[name=EMAIL]').value}`;
   resume.appendChild(emailInput);
   const house = document.createElement('p');
   house.innerText = `Casa: ${document.querySelector('#house').value}`;
@@ -110,6 +124,7 @@ function imprimirDados(event) {
   avaliacao();
   observacoes();
   hideForm();
+  createButton();
 }
 btnEnviar.addEventListener('click', checkSubjects);
 btnEnviar.addEventListener('click', imprimirDados);
